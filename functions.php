@@ -64,7 +64,7 @@ function login($pseudo, $password){
         if(empty($user)){
             echo json_encode([
                 "status" =>404,
-                "message" => "user not found"
+                "message" => "user not found",
             ]);
 
             }else{
