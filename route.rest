@@ -26,9 +26,12 @@ POST  http://localhost/api_back/
 POST  http://localhost/api_back/
 
 {
-    "expeditor": 3,
-    "receiver": 2,
-    "message" :"contenu du message",
+    "expeditor": 62,
+    "receiver": 59,
+    "message" :"et des nuggets?",
     "action" : "send message"
 }
+
+###
+GET  http://localhost/api_back/getListMessage/2/3
 
