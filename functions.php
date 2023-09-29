@@ -123,6 +123,7 @@ function sendMessage($expeditor,$receiver,$message){
 
 // fonction pour récupérer la liste des users
 function getListUser(){
+
     // se connecter à la db
     $db = dbConnect();
 
@@ -150,6 +151,7 @@ function getListUser(){
 
 // fonction pour récupérer la conversation entre 2 users
 function getListMessage($expeditor,$receiver) {
+    
      // se connecter à la db
      $db = dbConnect();
 
@@ -167,6 +169,7 @@ function getListMessage($expeditor,$receiver) {
             "message" => "voici la liste de votre discution",
             "listMessage" => $messages
         ]);
+
     }catch(PDOException $e){
         echo json_encode([
             "status" => 500,
