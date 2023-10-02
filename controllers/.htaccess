@@ -1,0 +1,5 @@
+#activer la règle de réécriture d'url
+RewriteEngine on
+
+#rediriger vers le dossier views  "q=$1"->pour les requêtes en GET
+RewriteRule ^(.*)$ index.php?q=$1 [L]

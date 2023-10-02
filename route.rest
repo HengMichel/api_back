@@ -5,6 +5,7 @@ GET http://localhost/api_back/getuserlist/
 POST  http://localhost/api_back/
 
 # ligne 9 à 11 c'est du code format json
+
 {
     "pseudo": "BG",
     "password" :"passer",
@@ -15,10 +16,10 @@ POST  http://localhost/api_back/
 POST  http://localhost/api_back/
 
 {
-    "pseudo": "the troll",
+    "pseudo": "Faissal",
     "password" :"passer",
-    "firstname" :"Alin",
-    "lastname" :"Mansita",
+    "firstname" :"C'est quoi ta note",
+    "lastname" :"ta note ???",
     "action" : "register"
 }
 
@@ -26,12 +27,12 @@ POST  http://localhost/api_back/
 POST  http://localhost/api_back/
 
 {
-    "expeditor": 62,
+    "expeditor": 71,
     "receiver": 59,
-    "message" :"et des nuggets?",
+    "message" :"je ne sais pas j'ai peur",
     "action" : "send message"
 }
 
 ###
-GET  http://localhost/api_back/getListMessage/2/3
+GET  http://localhost/api_back/getListMessage/71/59
 

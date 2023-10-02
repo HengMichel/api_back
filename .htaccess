@@ -1,7 +1,8 @@
+#activer la règle de réécriture d'url
 RewriteEngine on
-RewriteCond ${REQUEST_FILENAME} !d
-RewriteCond ${REQUEST_FILENAME} !f
-RewriteRule (.*) index.php [L]
+
+#rediriger vers le dossier views
+RewriteRule (.*) controllers/$1 [L]
 
 # RewriteCond %{REQUEST_FILENAME} !d
 # RewriteCond %{REQUEST_FILENAME} !f

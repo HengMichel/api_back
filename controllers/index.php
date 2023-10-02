@@ -1,7 +1,11 @@
 <?php 
+
 header(("Access-Control-Allow-Origin: *"));
-// inclure function.php
-require_once "functions.php";
+
+// inclure userController.php
+require_once "userController.php";
+
+// si l'utilisateur envoi une requête de type GET
 
 // "REQUEST_METHOD" est une constante
 if($_SERVER["REQUEST_METHOD"] == "GET"){
@@ -14,10 +18,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $action = $url[1];
 
     if($action == "getuserlist"){
-        getListUser();
+        UserController:: loadModel($action);
     }
     else if($action == "getListMessage"){
-        getListMessage($url[2],$url[3]);
+        UserController::loadModel($action,[$url[2],$url[3]]);
     }else{
         echo json_encode([
             "status" =>404,
@@ -33,17 +37,17 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     if($data['action'] == "login"){
 
         // appel de la fonction login
-        login($data['pseudo'], $data['password']);
+        UserController::loadModel($data['action'], [$data['pseudo'], $data['password']]);
 
         }else if($data['action'] == "register"){
 
             // on fait appel à la function register pour enregistrer le user
-            register($data['firstname'],$data['lastname'],$data['pseudo'],$data['password']);
+            UserController::loadModel($data['action'], [$data['firstname'],$data['lastname'],$data['pseudo'],$data['password']]);
             
             }else if($data['action'] == "send message"){
             
                 // appel de la fonction sendMessage
-                sendMessage($data['expeditor'],$data['receiver'],$data['message']);
+                UserController::loadModel($data['action'], [$data['expeditor'],$data['receiver'],$data['message']]);
 
                 }else{
             
